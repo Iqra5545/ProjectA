@@ -13,6 +13,7 @@ namespace ProjectA
 {
     public partial class AddProject : Form
     {
+        Valid v = new Valid();
         String conURL = (@"Data Source = DESKTOP-L9A1H4O\SQLEXPRESS; Initial Catalog = ProjectA; User ID = sa; Password = iqra5545; MultipleActiveResultSets = True");
         public AddProject()
         {
@@ -31,22 +32,34 @@ namespace ProjectA
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string qry;
-            SqlConnection con = new SqlConnection(conURL);
-            con.Open();
-            qry = "INSERT INTO Project(Description, Title) " +
-                    "VALUES ('" + BoxDesc.Text + "','" + BoxTitle.Text + "')";
-            SqlCommand cmd3 = new SqlCommand(qry, con);
-            int i = cmd3.ExecuteNonQuery();
-            if (i > 0)
+            if (!v.IsDigitAndLetter(BoxDesc.Text))
             {
-                MessageBox.Show("Inserted sucessfully");
+                MessageBox.Show("Enter Description Correctly");
+            }
+            if (!v.IsDigitAndLetter(BoxTitle.Text))
+            {
+                MessageBox.Show("Enter Description Correctly");
             }
             else
             {
-                MessageBox.Show("Inserted Not Inserted");
+                string qry;
+                SqlConnection con = new SqlConnection(conURL);
+                con.Open();
+                qry = "INSERT INTO Project(Description, Title) " +
+                        "VALUES ('" + BoxDesc.Text + "','" + BoxTitle.Text + "')";
+                SqlCommand cmd3 = new SqlCommand(qry, con);
+                int i = cmd3.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    MessageBox.Show("Inserted sucessfully");
+                }
+                else
+                {
+                    MessageBox.Show("Inserted Not Inserted");
+                }
+                con.Close();
             }
-            con.Close();
+            
         }
 
         private void label2_Click(object sender, EventArgs e)

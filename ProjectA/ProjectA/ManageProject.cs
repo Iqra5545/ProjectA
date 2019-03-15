@@ -21,23 +21,33 @@ namespace ProjectA
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(conURL);
-            int d = dataGridView1.CurrentCell.RowIndex;
-            conn.Open();
-            string qry = "UPDATE Project SET Description = '" + BoxDesc.Text + "', Title = '" + BoxTitle.Text + "'";
-            SqlCommand cmd3 = new SqlCommand(qry, conn);
-            int i = cmd3.ExecuteNonQuery();
-            if ( i > 0)
+            DialogResult result = MessageBox.Show("Do You Want to update?", "Update", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (result.Equals(DialogResult.OK))
             {
-                MessageBox.Show("Update sucessfully");
+                //Do something
+                SqlConnection conn = new SqlConnection(conURL);
+                int d = dataGridView1.CurrentCell.RowIndex;
+                conn.Open();
+                string qry = "UPDATE Project SET Description = '" + BoxDesc.Text + "', Title = '" + BoxTitle.Text + "'";
+                SqlCommand cmd3 = new SqlCommand(qry, conn);
+                int i = cmd3.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    MessageBox.Show("Update sucessfully");
+                }
+                else
+                {
+                    MessageBox.Show("Inserted Not Inserted");
+                }
+                PanelUpdateProject.Hide();
+                this.Refresh();
+                conn.Close();
             }
             else
             {
-                MessageBox.Show("Inserted Not Inserted");
+                MessageBox.Show("Action Canceled");
             }
-            PanelUpdateProject.Hide();
-            this.Refresh();
-            conn.Close();
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -47,17 +57,27 @@ namespace ProjectA
             int d = dataGridView1.CurrentCell.RowIndex;
             if (dataGridView1.Rows[d].Cells["Delete"].Selected)
             {
-                conn.Open();
-                int g = Convert.ToInt32(dataGridView1.Rows[d].Cells["Id"].Value);
-                delcmd.CommandText = "DELETE FROM Project WHERE id = '" + g + "' ";
+                DialogResult result = MessageBox.Show("Do You Want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (result.Equals(DialogResult.OK))
+                {
+                    //Do something
+                    conn.Open();
+                    int g = Convert.ToInt32(dataGridView1.Rows[d].Cells["Id"].Value);
+                    delcmd.CommandText = "DELETE FROM Project WHERE id = '" + g + "' ";
 
-                delcmd.Connection = conn;
-                delcmd.ExecuteNonQuery();
+                    delcmd.Connection = conn;
+                    delcmd.ExecuteNonQuery();
 
+
+                    dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+                    MessageBox.Show("Data Deleted");
+                    conn.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Action Canceled");
+                }
                 
-                dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
-                MessageBox.Show("Row Deleted");
-                conn.Close();
             }
             if (dataGridView1.Rows[d].Cells["Edit"].Selected)
             {

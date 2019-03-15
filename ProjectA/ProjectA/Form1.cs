@@ -87,5 +87,10 @@ namespace ProjectA
             ManageEvaluation me = new ManageEvaluation();
             me.ShowDialog();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

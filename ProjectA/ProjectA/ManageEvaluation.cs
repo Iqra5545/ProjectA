@@ -26,17 +26,27 @@ namespace ProjectA
             int d = dataGridView1.CurrentCell.RowIndex;
             if (dataGridView1.Rows[d].Cells["Delete"].Selected)
             {
-                conn.Open();
-                int g = Convert.ToInt32(dataGridView1.Rows[d].Cells["Id"].Value);
-                delcmd.CommandText = "DELETE FROM Evaluation WHERE id = '" + g + "' ";
+                DialogResult result = MessageBox.Show("Do You Want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (result.Equals(DialogResult.OK))
+                {
+                    //Do something
+                    conn.Open();
+                    int g = Convert.ToInt32(dataGridView1.Rows[d].Cells["Id"].Value);
+                    delcmd.CommandText = "DELETE FROM Evaluation WHERE id = '" + g + "' ";
 
-                delcmd.Connection = conn;
-                delcmd.ExecuteNonQuery();
+                    delcmd.Connection = conn;
+                    delcmd.ExecuteNonQuery();
 
 
-                dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
-                MessageBox.Show("Row Deleted");
-                conn.Close();
+                    dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+                    MessageBox.Show("Row Deleted");
+                    conn.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Action canceled");
+                }
+                
             }
             if (dataGridView1.Rows[d].Cells["Edit"].Selected)
             {
@@ -66,22 +76,32 @@ namespace ProjectA
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(conURL);
-            int d = dataGridView1.CurrentCell.RowIndex;
-            conn.Open();
-            string qry = "UPDATE Evaluation SET Name = '" + BoxName.Text + "', TotalMarks = '" + BoxMarks + "', '"+BoxWeightage.Text+"' ";
-            SqlCommand cmd3 = new SqlCommand(qry, conn);
-            int i = cmd3.ExecuteNonQuery();
-            if (i > 0)
+            DialogResult result = MessageBox.Show("Do You Want to update?", "Update", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (result.Equals(DialogResult.OK))
             {
-                MessageBox.Show("Update sucessfully");
+                //Do something
+                SqlConnection conn = new SqlConnection(conURL);
+                int d = dataGridView1.CurrentCell.RowIndex;
+                conn.Open();
+                string qry = "UPDATE Evaluation SET Name = '" + BoxName.Text + "', TotalMarks = '" + BoxMarks + "', '" + BoxWeightage.Text + "' ";
+                SqlCommand cmd3 = new SqlCommand(qry, conn);
+                int i = cmd3.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    MessageBox.Show("Update sucessfully");
+                }
+                else
+                {
+                    MessageBox.Show("Inserted Not Inserted");
+                }
+                PanelUpdateEval.Hide();
+                conn.Close();
             }
             else
             {
-                MessageBox.Show("Inserted Not Inserted");
+                MessageBox.Show("Action canceled");
             }
-            PanelUpdateEval.Hide();
-            conn.Close();
+            
         }
 
         private void label3_Click(object sender, EventArgs e)

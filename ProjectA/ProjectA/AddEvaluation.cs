@@ -13,6 +13,7 @@ namespace ProjectA
 {
     public partial class AddEvaluation : Form
     {
+        Valid v = new Valid();
         String conURL = (@"Data Source = DESKTOP-L9A1H4O\SQLEXPRESS; Initial Catalog = ProjectA; User ID = sa; Password = iqra5545; MultipleActiveResultSets = True");
         public AddEvaluation()
         {
@@ -21,22 +22,38 @@ namespace ProjectA
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string qry;
-            SqlConnection con = new SqlConnection(conURL);
-            con.Open();
-            qry = "INSERT INTO Evaluation(Name, TotalMarks, TotalWeightage) " +
-                    "VALUES ('" + BoxName.Text + "','" + BoxMarks.Text + "', '"+BoxWeightage.Text+"')";
-            SqlCommand cmd3 = new SqlCommand(qry, con);
-            int i = cmd3.ExecuteNonQuery();
-            if (i > 0)
+            if (!v.IsAllChar(BoxName.Text))
             {
-                MessageBox.Show("Inserted sucessfully");
+                MessageBox.Show("Enter Name Correctly");
+            }
+            if (!v.IsAllDigit(BoxMarks.Text))
+            {
+                MessageBox.Show("Enter Marks Correctly");
+            }
+            if (!v.IsAllDigit(BoxWeightage.Text))
+            {
+                MessageBox.Show("Enter Weightage Correctly");
             }
             else
             {
-                MessageBox.Show("Inserted Not Inserted");
+                string qry;
+                SqlConnection con = new SqlConnection(conURL);
+                con.Open();
+                qry = "INSERT INTO Evaluation(Name, TotalMarks, TotalWeightage) " +
+                        "VALUES ('" + BoxName.Text + "','" + BoxMarks.Text + "', '" + BoxWeightage.Text + "')";
+                SqlCommand cmd3 = new SqlCommand(qry, con);
+                int i = cmd3.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    MessageBox.Show("Inserted sucessfully");
+                }
+                else
+                {
+                    MessageBox.Show("Inserted Not Inserted");
+                }
+                con.Close();
             }
-            con.Close();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
