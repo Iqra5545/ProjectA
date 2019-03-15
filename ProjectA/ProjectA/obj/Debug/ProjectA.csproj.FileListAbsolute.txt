@@ -11,3 +11,21 @@ E:\6th semester\DBMS\LAB\ProjectA\ProjectA\obj\Debug\ProjectA.pdb
 E:\6th semester\DBMS\LAB\ProjectA\ProjectA\obj\Debug\ProjectA.csprojAssemblyReference.cache
 E:\6th semester\DBMS\LAB\ProjectA\ProjectA\bin\Debug\ProjectA.pdb
 E:\6th semester\DBMS\LAB\ProjectA\ProjectA\obj\Debug\ProjectA.AddAdvisor.resources
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\bin\Debug\ProjectA.exe
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\bin\Debug\ProjectA.exe.config
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\obj\Debug\ProjectA.csprojAssemblyReference.cache
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\obj\Debug\ProjectA.AddAdvisor.resources
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\obj\Debug\ProjectA.AddEvaluation.resources
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\obj\Debug\ProjectA.AddProject.resources
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\obj\Debug\ProjectA.AddStudent.resources
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\obj\Debug\ProjectA.Form1.resources
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\obj\Debug\ProjectA.ManageAdvisor.resources
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\obj\Debug\ProjectA.ManageEvaluation.resources
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\obj\Debug\ProjectA.ManageProject.resources
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\obj\Debug\ProjectA.ManageStudent.resources
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\obj\Debug\ProjectA.Properties.Resources.resources
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.GenerateResource.cache
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.CoreCompileInputs.cache
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\obj\Debug\ProjectA.exe
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\obj\Debug\ProjectA.pdb
+C:\Users\ok\Desktop\DB\ProjectA\ProjectA\bin\Debug\ProjectA.pdb

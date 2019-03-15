@@ -34,7 +34,7 @@ namespace ProjectA
             string qry;
             SqlConnection con = new SqlConnection(conURL);
             con.Open();
-            qry = "INSERT INTO Project(Designation, Title) " +
+            qry = "INSERT INTO Project(Description, Title) " +
                     "VALUES ('" + BoxDesc.Text + "','" + BoxTitle.Text + "')";
             SqlCommand cmd3 = new SqlCommand(qry, con);
             int i = cmd3.ExecuteNonQuery();
@@ -84,6 +84,19 @@ namespace ProjectA
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f = new Form1();
+            f.ShowDialog();
         }
     }
 }

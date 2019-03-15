@@ -61,5 +61,17 @@ namespace ProjectA
             Form1 f = new Form1();
             f.ShowDialog();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f = new Form1();
+            f.ShowDialog();
+        }
     }
 }

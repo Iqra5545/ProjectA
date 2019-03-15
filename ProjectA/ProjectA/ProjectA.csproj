@@ -117,6 +117,15 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageAdvisor.resx">
+      <DependentUpon>ManageAdvisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageEvaluation.resx">
+      <DependentUpon>ManageEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageProject.resx">
+      <DependentUpon>ManageProject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageStudent.resx">
       <DependentUpon>ManageStudent.cs</DependentUpon>
     </EmbeddedResource>

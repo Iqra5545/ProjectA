@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddAdvisor));
             this.button1 = new System.Windows.Forms.Button();
             this.BoxContactNo = new System.Windows.Forms.TextBox();
             this.BoxEmail = new System.Windows.Forms.TextBox();
@@ -49,22 +49,11 @@
             this.BoxSalary = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.BoxDesig = new System.Windows.Forms.ComboBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Teal;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(762, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(35, 29);
-            this.button2.TabIndex = 58;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -284,16 +273,57 @@
             this.BoxDesig.TabIndex = 61;
             this.BoxDesig.Text = "Select Designation:";
             // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.White;
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.Teal;
+            this.button9.Location = new System.Drawing.Point(772, 5);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(22, 25);
+            this.button9.TabIndex = 62;
+            this.button9.Text = "X";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(314, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.TabIndex = 64;
+            this.label4.Text = "Back";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(287, 1);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(28, 32);
+            this.button2.TabIndex = 63;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // AddAdvisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 486);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.BoxDesig);
             this.Controls.Add(this.BoxSalary);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BoxContactNo);
             this.Controls.Add(this.BoxEmail);
@@ -310,7 +340,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.RegNo);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddAdvisor";
             this.Text = "AddAdvisor";
             this.panel1.ResumeLayout(false);
@@ -321,8 +351,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox BoxContactNo;
         private System.Windows.Forms.TextBox BoxEmail;
@@ -343,5 +371,8 @@
         private System.Windows.Forms.TextBox BoxSalary;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox BoxDesig;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button2;
     }
 }

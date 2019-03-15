@@ -23,11 +23,11 @@ namespace ProjectA
         {
             SqlConnection conn = new SqlConnection(conURL);
             SqlCommand delcmd = new SqlCommand();
-            int d = dataGridView1.CurrentCell.RowIndex;
-            if (dataGridView1.Rows[d].Cells["Delete"].Selected)
+            int d = dataGridViewSt.CurrentCell.RowIndex;
+            if (dataGridViewSt.Rows[d].Cells["Delete"].Selected)
             {
                 conn.Open();
-                int g = Convert.ToInt32(dataGridView1.Rows[d].Cells["Id"].Value);
+                int g = Convert.ToInt32(dataGridViewSt.Rows[d].Cells["Id"].Value);
                 delcmd.CommandText = "DELETE FROM Student WHERE id = '" + g + "' ";
 
                 delcmd.Connection = conn;
@@ -35,19 +35,19 @@ namespace ProjectA
 
                 using (SqlCommand dcl = new SqlCommand())
                 {
-                    dcl.CommandText = "DELETE FROM Person WHERE id=" + dataGridView1.Rows[d].Cells["id"].Value.ToString() + "";
+                    dcl.CommandText = "DELETE FROM Person WHERE id=" + dataGridViewSt.Rows[d].Cells["id"].Value.ToString() + "";
                     dcl.Connection = conn;
                     dcl.ExecuteNonQuery();
                 }
-                dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+                dataGridViewSt.Rows.RemoveAt(dataGridViewSt.CurrentCell.RowIndex);
                 MessageBox.Show("Row Deleted");
                 conn.Close();
             }
-            if (dataGridView1.Rows[d].Cells["Edit"].Selected)
+            if (dataGridViewSt.Rows[d].Cells["Edit"].Selected)
             {
                 conn.Open();
-                int g = Convert.ToInt32(dataGridView1.Rows[d].Cells["Id"].Value);
-                panel2.Show();
+                int g = Convert.ToInt32(dataGridViewSt.Rows[d].Cells["Id"].Value);
+                PanelUpdateStudent.Show();
 
             }
         }
@@ -55,9 +55,9 @@ namespace ProjectA
         private void button3_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(conURL);
-            int d = dataGridView1.CurrentCell.RowIndex;
+            int d = dataGridViewSt.CurrentCell.RowIndex;
             conn.Open();
-            int g = Convert.ToInt32(dataGridView1.Rows[d].Cells["Id"].Value);
+            int g = Convert.ToInt32(dataGridViewSt.Rows[d].Cells["Id"].Value);
             string qry;
             String gen = BoxGender.Text;
             string gender = string.Format("SELECT id FROM Lookup Where Category ='GENDER' AND Value= '" + gen + "'");
@@ -81,7 +81,7 @@ namespace ProjectA
             {
                 MessageBox.Show("Inserted Not Inserted");
             }
-            panel2.Hide();
+            PanelUpdateStudent.Hide();
             conn.Close();
         }
 
@@ -93,10 +93,9 @@ namespace ProjectA
                 SqlDataAdapter db = new SqlDataAdapter("SELECT person.id, FirstName, RegistrationNo, Email FROM (Person INNER JOIN Student ON Person.Id = Student.Id)", conn);
                 DataTable dt = new DataTable();
                 db.Fill(dt);
-                dataGridView1.DataSource = dt;
-                dataGridView1.Columns["Edit"].DisplayIndex = 5;
-                dataGridView1.Columns["Delete"].DisplayIndex = 4;
-
+                dataGridViewSt.DataSource = dt;
+                dataGridViewSt.Columns["Edit"].DisplayIndex = 5;
+                dataGridViewSt.Columns["Delete"].DisplayIndex = 4;
 
                 conn.Close();
             }
@@ -105,6 +104,41 @@ namespace ProjectA
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddStudent s = new AddStudent();
+            s.ShowDialog();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f = new Form1();
+            f.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
