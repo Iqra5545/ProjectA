@@ -31,14 +31,7 @@ namespace ProjectA
             {
                 MessageBox.Show("Enter Last Name Correctly");
             }
-            if (!v.IsDigitAndLetter(BoxEmail.Text))
-            {
-                MessageBox.Show("Enter Email Correctly");
-            }
-            if (!v.IsAllDigit(BoxContactNo.Text))
-            {
-                MessageBox.Show("Enter Contact Number Correctly");
-            }
+            
             else
             {
                 string qry;
@@ -92,6 +85,11 @@ namespace ProjectA
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddStudent_Load(object sender, EventArgs e)
         {
 
         }

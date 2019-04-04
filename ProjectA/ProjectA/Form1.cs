@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ProjectA
 {
@@ -91,6 +92,39 @@ namespace ProjectA
         private void button9_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            string qry;
+            SqlConnection con = new SqlConnection(conURL);
+            con.Open();
+            DateTime Create = DateTime.Today;
+            qry = "INSERT INTO [Group](Created_On) Values ('" + Create + "')";
+            SqlCommand cmd = new SqlCommand(qry, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GroupStudent g = new GroupStudent();
+            g.ShowDialog();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ProjectAdvisor g = new ProjectAdvisor();
+            g.ShowDialog();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GroupEvaluation gh = new GroupEvaluation();
+            gh.ShowDialog();
         }
     }
 }

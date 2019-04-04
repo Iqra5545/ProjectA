@@ -163,7 +163,7 @@
             this.PanelUpdateAdvisor.Controls.Add(this.groupBox1);
             this.PanelUpdateAdvisor.Location = new System.Drawing.Point(16, 12);
             this.PanelUpdateAdvisor.Name = "PanelUpdateAdvisor";
-            this.PanelUpdateAdvisor.Size = new System.Drawing.Size(772, 468);
+            this.PanelUpdateAdvisor.Size = new System.Drawing.Size(750, 462);
             this.PanelUpdateAdvisor.TabIndex = 14;
             this.PanelUpdateAdvisor.Visible = false;
             // 
