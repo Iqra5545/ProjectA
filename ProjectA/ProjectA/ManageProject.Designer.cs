@@ -45,12 +45,12 @@
             this.FirstName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.PanelUpdateProject.SuspendLayout();
@@ -175,6 +175,7 @@
             this.PanelUpdateProject.Size = new System.Drawing.Size(785, 466);
             this.PanelUpdateProject.TabIndex = 14;
             this.PanelUpdateProject.Visible = false;
+            this.PanelUpdateProject.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelUpdateProject_Paint);
             // 
             // BoxDesc
             // 
@@ -237,6 +238,20 @@
             this.panel2.Size = new System.Drawing.Size(56, 486);
             this.panel2.TabIndex = 15;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Teal;
+            this.button4.Location = new System.Drawing.Point(26, 5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(22, 25);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "X";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -261,30 +276,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "List Of Projects";
             // 
-            // label5
+            // label6
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Teal;
-            this.label5.Location = new System.Drawing.Point(289, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(237, 30);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Data of All Projects";
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Teal;
-            this.button4.Location = new System.Drawing.Point(26, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(22, 25);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "X";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(565, 66);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Back";
             // 
             // label4
             // 
@@ -295,14 +294,16 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Add ";
             // 
-            // label6
+            // label5
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(565, 66);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Back";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Teal;
+            this.label5.Location = new System.Drawing.Point(289, 56);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(237, 30);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Data of All Projects";
             // 
             // ManageProject
             // 

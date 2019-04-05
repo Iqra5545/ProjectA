@@ -67,31 +67,6 @@ namespace ProjectA
 
             }
 
-            using (SqlConnection conn = new SqlConnection(conURL))
-            {
-                conn.Open();
-                SqlDataAdapter db = new SqlDataAdapter("SELECT Id, Name FROM Evaluation", conn);
-                DataTable dt = new DataTable();
-                db.Fill(dt);
-                ShowProjects.DataSource = dt;
-                ShowProjects.Columns["Set"].DisplayIndex = 2;
-
-                conn.Close();
-
-            }
-
-            using (SqlConnection conn = new SqlConnection(conURL))
-            {
-                conn.Open();
-                SqlDataAdapter db = new SqlDataAdapter("SELECT Id, Designation FROM Advisor", conn);
-                DataTable dt = new DataTable();
-                db.Fill(dt);
-                ShowProjects.DataSource = dt;
-                ShowProjects.Columns["Allocate"].DisplayIndex = 2;
-
-                conn.Close();
-
-            }
         }
 
         private void ShowStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)

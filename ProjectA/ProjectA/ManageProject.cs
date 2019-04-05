@@ -63,6 +63,18 @@ namespace ProjectA
                     //Do something
                     conn.Open();
                     int g = Convert.ToInt32(dataGridView1.Rows[d].Cells["Id"].Value);
+
+                    delcmd.CommandText = "DELETE FROM ProjectAdvisor WHERE ProjectiId = '" + g + "' ";
+
+                    delcmd.Connection = conn;
+                    delcmd.ExecuteNonQuery();
+
+                    delcmd.CommandText = "DELETE FROM GroupProject WHERE ProjectiId = '" + g + "' ";
+
+                    delcmd.Connection = conn;
+                    delcmd.ExecuteNonQuery();
+
+
                     delcmd.CommandText = "DELETE FROM Project WHERE id = '" + g + "' ";
 
                     delcmd.Connection = conn;
@@ -122,6 +134,11 @@ namespace ProjectA
         private void button4_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void PanelUpdateProject_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

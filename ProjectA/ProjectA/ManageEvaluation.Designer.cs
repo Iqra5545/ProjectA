@@ -135,6 +135,7 @@
             this.PanelUpdateEval.Size = new System.Drawing.Size(788, 474);
             this.PanelUpdateEval.TabIndex = 18;
             this.PanelUpdateEval.Visible = false;
+            this.PanelUpdateEval.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelUpdateEval_Paint);
             // 
             // BoxWeightage
             // 

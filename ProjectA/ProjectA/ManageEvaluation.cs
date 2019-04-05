@@ -32,6 +32,13 @@ namespace ProjectA
                     //Do something
                     conn.Open();
                     int g = Convert.ToInt32(dataGridView1.Rows[d].Cells["Id"].Value);
+
+                    delcmd.CommandText = "DELETE FROM GroupEvaluation WHERE EvaluationId = '" + g + "' ";
+
+                    delcmd.Connection = conn;
+                    delcmd.ExecuteNonQuery();
+
+
                     delcmd.CommandText = "DELETE FROM Evaluation WHERE id = '" + g + "' ";
 
                     delcmd.Connection = conn;
@@ -126,6 +133,11 @@ namespace ProjectA
         private void button6_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void PanelUpdateEval_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

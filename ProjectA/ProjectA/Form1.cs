@@ -126,5 +126,12 @@ namespace ProjectA
             GroupEvaluation gh = new GroupEvaluation();
             gh.ShowDialog();
         }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Reports f = new Reports();
+            f.ShowDialog();
+        }
     }
 }

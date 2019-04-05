@@ -31,9 +31,15 @@ namespace ProjectA
                 DialogResult result = MessageBox.Show("Do You Want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (result.Equals(DialogResult.OK))
                 {
-                    //Do something
                     conn.Open();
                     int g = Convert.ToInt32(dataGridViewSt.Rows[d].Cells["Id"].Value);
+                    delcmd.CommandText = "DELETE FROM GroupStudent WHERE StudentId = '" + g + "' ";
+
+                    delcmd.Connection = conn;
+                    delcmd.ExecuteNonQuery();
+                    //Do something
+                    
+                    
                     delcmd.CommandText = "DELETE FROM Student WHERE id = '" + g + "' ";
 
                     delcmd.Connection = conn;
